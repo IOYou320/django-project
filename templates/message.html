@@ -1,0 +1,47 @@
+<!doctepy html><!--声明文档类型：html5-->
+<html lang="en"><!--根标签，开始标签-->
+	<head><!--头部标签-->
+		<title> hi 你好！</title>
+		<meta charset="utf-8"><!--字符集;万国码-->
+		<meta name="keyworlds" content="计数院1204测试 html+div css"><!--网页关键字-->
+		<meta name="description" content="hi！"><!--网页描述-->
+        <script src="/static/my_jquery.js"></script>
+	</head>	
+	<body onload="Showmessage()"><!--身体标签-->
+
+		<span>欢迎</span><br>
+        <span id="name"></span><br>
+        <span id="user_no"></span><br>
+        <span class="major"></span><br>
+        <img src="" class="image" alt="">
+	</body>
+
+    <script>
+        function Showmessage( ) {
+            var cookie1 = document.cookie;
+{#            var c_list = cookie1.split('=');#}
+
+            $.ajax({
+                url:'/Information_portal/message/',
+                type:'post',
+                data:{'test':cookie1},
+                success: function (args) {
+                    var res = JSON.parse(args);
+                    console.log(res);
+                    var s1 = document.getElementById('name');
+                    s1.innerHTML = res['name'];
+
+                    var s2 = document.getElementById('user_no');
+                    s2.innerHTML = res['user_no'];
+
+                    var s3 = document.getElementsByClassName('major')[0];
+                    s3.innerHTML = res['major'];
+
+                    var s4 = document.getElementsByClassName('image')[0].src=res['img'];
+                }
+
+            });
+        }
+
+    </script>
+</html><!--结束标签，前面斜杠不能丢-->

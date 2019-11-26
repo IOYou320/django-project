@@ -1,0 +1,48 @@
+<!doctepy html><!--声明文档类型：html5-->
+<html lang="en"><!--根标签，开始标签-->
+	<head><!--头部标签-->
+		<title> hi 你好！</title>
+		<meta charset="utf-8"><!--字符集;万国码-->
+		<meta name="keyworlds" content="计数院1204测试注册 html+div css"><!--网页关键字-->
+		<meta name="description" content="hi！"><!--网页描述-->
+        <script type="text/javascript" src="/static/my_jquery.js"></script>
+	</head>	
+	<body onload="Email"><!--身体标签-->
+    <form method="post" action="/Information_portal/register/" >
+        <span>学生学号</span><input type="text" name="users_no" placeholder="学生学号(必填)">
+        <br>
+        <span>{{ error_id }}</span>
+        <br>
+        <span>学生</span><input type="text" name="name" placeholder="姓名(必填)">
+        <br>
+        <span>专业</span><input type="text" name="major" placeholder="专业(必填)">
+        <br>
+        <span>邮箱验证</span><input type="text" placeholder="邮箱(必填)" name="email" maxlength="50">
+        <br>
+        <span>密码</span><input type="password" name="pwd" placeholder="密码(必填)">
+        <br>
+        <span>在输入一次密码</span><input type="password" name="pwd1" placeholder="再输入一次密码(必填)">
+        <br>
+        <span>{{  error_password }}</span>
+        <br>
+        <input type="submit" value="注册">
+        <span>{{ error_infor }}</span>
+    </form>
+    <form action=""></form>
+	</body>
+
+<script type="text/javascript">
+    function Email() {
+
+        //验证邮箱
+        if(!$("input[name='email']").val().match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)) {
+
+            alert("邮箱格式不正确！请重新输入");
+            return false;
+        } else {
+            alert("邮箱正确！");
+        }
+    }
+</script>
+</html><!--结束标签，前面斜杠不能丢-->
+

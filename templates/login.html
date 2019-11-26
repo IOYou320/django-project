@@ -1,0 +1,20 @@
+<!doctepy html><!--声明文档类型：html5-->
+<html lang="en"><!--根标签，开始标签-->
+	<head><!--头部标签-->
+		<title> hi 你好！</title>
+		<meta charset="utf-8"><!--字符集;万国码-->
+		<meta name="keyworlds" content="计数院1204测试登录 html+div css"><!--网页关键字-->
+		<meta name="description" content="hi！"><!--网页描述-->
+	</head>	
+	<body><!--身体标签-->
+    <form method="post" action="/Information_portal/login/">
+		<span>姓名</span> <input type="text" name="users_name"><span></span><br/>
+
+        <span>密码</span> <input type="password" name="users_password"><br/>
+
+        <input type="submit" value="登录"><span>{{ error_message }}</span>
+    </form>
+    <br>
+    <a href="http://127.0.0.1:8000/Information_portal/register/">注册</a>
+	</body>
+</html><!--结束标签，前面斜杠不能丢-->
